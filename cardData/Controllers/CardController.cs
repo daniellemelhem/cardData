@@ -26,6 +26,8 @@ namespace cardData.Controllers
             var cards = _mapper.Map<List<CardDto>>(_cardRepository.GetCards());
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+
+
             return Ok(cards);
         }
         [HttpPost]
