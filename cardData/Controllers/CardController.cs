@@ -22,11 +22,10 @@ namespace cardData.Controllers
         [ProducesResponseType(200, Type = typeof(IEnumerable<Card>))]
         public IActionResult GetCards()
         {
+            //another test for git
             var cards = _mapper.Map<List<CardDto>>(_cardRepository.GetCards());
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-
-            //testing git
             return Ok(cards);
         }
         [HttpPost]
